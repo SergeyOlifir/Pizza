@@ -1,0 +1,49 @@
+<template name="menuItems">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Menu items</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                {{#each menuItems}}
+                    <li class="list-group-item">{{title}}: ${{price}}<i class="pull-right glyphicon glyphicon-trash remove"></i><a class="pull-right" href="{{pathFor route='editMenuItem'}}"><i class=" glyphicon glyphicon-pencil"></i></a></li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <button data-toggle="modal" data-target="#menuItemsModal" class="btn btn-success btn-block">Add New</button>
+        </div>
+    </div>
+    
+    {{> addMenuItemPopUp}}
+    
+</template>
+
+<template name="addMenuItemPopUp">
+    <div class="modal fade" tabindex="-1" role="dialog" id="menuItemsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Add Menu Item</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input name="title" type="text" class="form-control" id="title" placeholder="Title" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Price</label>
+                            <input name="price" type="number" class="form-control" id="title" placeholder="Price" value="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>

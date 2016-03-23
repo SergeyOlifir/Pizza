@@ -1,0 +1,21 @@
+<template name="groupItem">
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-left">
+              <a href="#">
+                  <img width="60px" class="media-object" src="{{img}}">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{title}}</h4>
+              <div>
+                    <a href="{{pathFor route='viewGroup'}}" class="btn btn-default btn-sm">View</a>
+                    {{#if ownGroup }}
+                        <a href="{{pathFor route='editGroup'}}" class="btn btn-success btn-sm">Edit</a>
+                        <button href="{{pathFor route='editGroup'}}" class="btn btn-danger btn-sm delete">Del</button>
+                    {{/if }}
+              </div>
+            </div>
+        </div>
+    </li>
+</template>

@@ -1,0 +1,13 @@
+<template name="eventView">
+    <h4>Date: {{formated_date}}</h4>
+    <h4>Status: {{event_status}} </h4>
+    {{#if (not_has_orders) }}
+        <button data-toggle="modal" data-target="#orderModal" class="btn btn-primary btn-block">Make Order</button>
+        {{> addOrderForm}}
+    {{/if}}
+    
+    {{#if (has_orders) }}
+        {{> ordersList}}
+    {{/if}}
+    
+</template>

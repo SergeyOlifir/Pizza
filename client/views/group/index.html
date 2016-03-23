@@ -1,0 +1,32 @@
+<template name="groups">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Groups</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                {{#each groups}}
+                    {{> groupItem}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <a href="{{pathFor route='createGroup'}}" class="btn btn-success btn-block">Add New</a>
+        </div>
+    </div>
+</template>
+
+<template name="relatedGroups">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Related Groups</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                {{#each rGroups}}
+                    {{> groupItem}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>

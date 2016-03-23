@@ -1,0 +1,24 @@
+<template name="groupView">
+    <div class="thumbnail">
+        <img src="{{img}}" alt="...">
+    </div>
+    <h2 class="header">{{title}}</h2>
+    <div class="row">
+        {{#if ownGroup}}
+            <div class="col-md-6">
+                {{> usersList}}
+            </div>
+        {{/ if}}
+        <div class="col-md-6">
+            {{> menuItems}}
+        </div>
+    </div>
+    <div class="well">
+        {{> eventsList}}
+    </div>
+    <div class="well">
+        <a href="{{pathFor route='createEvent'}}" class="btn btn-block btn-primary">Create Pizza Event</a>
+    </div>
+    
+    {{> addUsersPopUp}}
+</template>

@@ -1,0 +1,53 @@
+<template name="usersList">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Users</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                {{#each groupUsers}}
+                    {{> userItem}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <button data-toggle="modal" data-target="#userModal" class="btn btn-success btn-block">Add New</button>
+        </div>
+    </div>
+</template>
+
+<template name="addUsersPopUp">
+    <div class="modal fade" tabindex="-1" role="dialog" id="userModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Add Users</h4>
+                    </div>
+                    <div class="modal-body">
+
+                            <ul class="list-group">
+                                {{#each users}}
+                                    {{> userItemForPopUp}}
+                                {{/each}}
+                            </ul>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="userItemForPopUp">
+    <li class="list-group-item"><input value="{{_id}}" type="checkbox" />{{name}}</li>
+</template>
+
+<template name="userItem">
+    <li class="list-group-item">{{name}}<i class="pull-right glyphicon glyphicon-trash remove"></i></li>
+</template>

@@ -1,0 +1,21 @@
+<template name="eventsList">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Events</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                {{#each events}}
+                    {{> eventItem}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>
+
+<template name="eventItem">
+    <li class="list-group-item">
+        <div><p class="lead">Date: {{formated_date}} Status: {{event_status}}</p></div>
+        <div><a href="{{pathFor route='viewEvent'}}" class="btn btn-block btn-success">View</a></div>
+    </li>
+</template>

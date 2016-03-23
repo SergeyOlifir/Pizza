@@ -1,0 +1,29 @@
+
+        <h1>Order</h1>
+        <ul>
+            {{#each orderItems }}
+                <li>
+                    <p>
+                        {{name}}. Count: {{count}}. Price: ${{price}}. Total price: ${{total}}
+                    </p>
+                </li>
+            {{/each }}
+        </ul>
+        <p>Total: {{totalPrice}}</p>
+
+
+        {{#if creator}}
+            <h1>Order</h1>
+            <ul>
+                {{#each allOrderItems }}
+                    <li>
+                        <p>
+                            {{name}}. Count: {{count}}. Price: ${{price}}. Total price: ${{total}}
+                        </p>
+                    </li>
+                {{/each }}
+            </ul>
+            <p>Total: {{allPrice}}</p>
+        {{/if }}
+    
+
